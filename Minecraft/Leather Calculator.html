@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<title>Leather Calculator</title>
+		<link rel="icon" href="../Icons/Leather Helmet.png" type="image/x-icon">
+		<script>
+		function onInputA() {
+			document.getElementById("color2").value = (String(document.getElementById("color").value).substr(0, 1) === '#' ? document.getElementById("color").value : '#' + document.getElementById("color").value)
+		}
+		function onInputB() {
+			document.getElementById("color").value = document.getElementById("color2").value
+		}
+		function changeAvailableDistMeasures() {
+			let version = document.getElementById("version").value;
+			let ele = document.getElementById("closest");
+			let oldValue = ele.value;
+			ele.innerHTML = '';
+			for(let val of [['Euclidean', 'Euclidean']]) {
+				let opt = document.createElement('option');
+				opt.value = val[0];
+				opt.innerHTML = val[1];
+				if(oldValue === val[0]) opt.selected = true;
+				ele.appendChild(opt);
+			}
+			if(version === '1-12') {
+				let val = ['CIEDE2000', 'CIEDE2000'];
+				let opt = document.createElement('option');
+				opt.value = val[0];
+				opt.innerHTML = val[1];
+				if(oldValue === val[0]) opt.selected = true;
+				ele.appendChild(opt);
+			}
+		}
+		</script>
+		<style>
+			.button {
+				background-color: black;
+				color: white;
+				border-radius: 10px;
+				padding: 10px 20px;
+				transition: background-color 0.3s ease;
+			}
+		</style>
+		<link rel="stylesheet" href="../style.css">
+	</head>
+	<body onload="changeAvailableDistMeasures()">
+		<center><h1>This tool allows you to generate a crafting recipe for any craftable color of leather armor in Minecraft Java</h1></center>
+		<form action="https://www.xjca.de/minecraft/dyeleatherarmor/getRecipeForColor.php" method="get" target="F1">
+			<label for="version">Version:</label>
+			<select id="version" name="version" onchange="changeAvailableDistMeasures()">
+				<option value="1-12">1.12+</option>
+				<option value="1-4-3">1.4.3 - 1.11.2</option>
+				<option value="1-4-2">1.4.2</option>
+			</select>
+			<br>
+			<label for="color">Color:</label>
+			<input type="text" id="color" name="color" value="DEC0DE" oninput="onInputA()"> or 
+			<input type="color" id="color2" name="color2" oninput="onInputB()"><br>
+			<label for="closest"><a title="Finds the closest craftable colour if the specified colour isn't craftable">Check for closest match:</a></label>
+			<select id="closest" name="closest">
+			</select>
+			<br>
+			<input type="submit" class="button" value="Get recipe">
+		</form>
+		<iframe frameborder="0" height="600px" width="100%" scrolling="yes" name="F1"></iframe>
+		<p>The rgb-value of the 16 basic colors available changed two times since the introduction of dyeable leather armor</p>
+		<p>There is a total of 5,713,438 craftable colors in versions 1.12+</p>
+		<p>There is a total of 4,200,779 craftable colors in versions 1.4.3 - 1.11.2</p>
+		<p>There is a total of 4,271,547 craftable colors in version 1.4.2</p>
+		<p>The rgb colour space contains 256^3 = 16 777 216 total colors</p>
+		<p>The following table lists the colour codes for all 16 basic colors across all versions</p>
+		<table border="1" style="border-collapse: collapse"><tr><th>Color</th><th>1.4.2</th><th>1.4.3 - 1.11.2</th><th>1.12+</th></tr>
+		<tr><td>black</td><td>#191919</td><td>#191919</td><td>#1D1D21</td></tr>
+		<tr><td>red</td><td>#CC4C4C</td><td>#993333</td><td>#B02E26</td></tr>
+		<tr><td>green</td><td>#667F33</td><td>#667F33</td><td>#5E7C16</td></tr>
+		<tr><td>brown</td><td>#7F664C</td><td>#664C33</td><td>#835432</td></tr>
+		<tr><td>blue</td><td>#3366CC</td><td>#334CB2</td><td>#3C44AA</td></tr>
+		<tr><td>purple</td><td>#B266E5</td><td>#7F3FB2</td><td>#8932B8</td></tr>
+		<tr><td>cyan</td><td>#4C99B2</td><td>#4C7F99</td><td>#169C9C</td></tr>
+		<tr><td>light grey</td><td>#999999</td><td>#999999</td><td>#9D9D97</td></tr>
+		<tr><td>grey</td><td>#4C4C4C</td><td>#4C4C4C</td><td>#474F52</td></tr>
+		<tr><td>pink</td><td>#F2B2CC</td><td>#F27FA5</td><td>#F38BAA</td></tr>
+		<tr><td>lime</td><td>#7FCC19</td><td>#7FCC19</td><td>#80C71F</td></tr>
+		<tr><td>yellow</td><td>#E5E533</td><td>#E5E533</td><td>#FED83D</td></tr>
+		<tr><td>light blue</td><td>#99B2F2</td><td>#6699D8</td><td>#3AB3DA</td></tr>
+		<tr><td>magenta</td><td>#E57FD8</td><td>#B24CD8</td><td>#C74EBD</td></tr>
+		<tr><td>orange</td><td>#F2B233</td><td>#D87F33</td><td>#F9801D</td></tr>
+		<tr><td>white</td><td>#FFFFFF</td><td>#FFFFFF</td><td>#F9FFFE</td></tr>
+		</table>
+		<a href="Minecraft.html"><button class="button">Back</button></a>
+		<div class="link"><img src="../Icons/Github.png" height="20px" width="20px" href="../Icons/github.png"><a href="https://anrar4.github.io/DyeLeatherArmor/" style="color: white;">Original Website</a></div>
+	</body>
+</html>
