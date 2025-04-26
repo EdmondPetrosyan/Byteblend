@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="icon.png" type="image/x-icon">
+    </head>
+    <body>
+        <div id="Homepage">
+            <h1 style="text-align: center;">This website is not finished</h1>
+            <div class="center">
+                <button onclick="randomwebsiteget()" class="button">Random Website</button>
+            </div>
+            <div class="bottom-center">
+                <button onclick="HomepageArtpage()">My art</button>
+                <button onclick="window.open('https://www.youtube.com/@Edmond_P', 'blank')">My Youtube channel</button>
+                <button onclick="HomepageBannerPatterns()">Minecraft Banner Patterns</button>
+            </div>
+        </div>
+        <div id="Artpage">
+            <div class="frame"><a><img href="Art/Art.png" src="Art/Art.png"></div>
+            <div class="frame"><a><img href="Art/seek.png" src="Art/seek.png"></div>
+            <div class="frame"><a><img href="Art/bomb.png" src="Art/bomb.png"></div>
+            <button onclick="HomepageArtpage()" style="text-align: center;">Back</button>
+        </div>
+        <div id="Banner Patterns">
+            <h1 style="text-align: center;">Banner Patterns</h1>
+            <div style="display: flex; justify-content: space-around;">
+                <div style="text-align: left;">
+                    <h2>Enderman Banner</h2>
+                    <h3>Step 1</h3>
+                    <img src="Banner Patterns/Enderman/Step 1.png" width="200px" height="100px">
+                    <h3>Step 2</h3>
+                    <img src="Banner Patterns/Enderman/Step 2.png" width="200px" height="100px">
+                    <h3>Step 3</h3>
+                    <img src="Banner Patterns/Enderman/Step 3.png" width="200px" height="100px">
+                    <h3>Step 4</h3>
+                    <img src="Banner Patterns/Enderman/Step 4.png" width="200px" height="100px">
+                    <h3>Step 5</h3>
+                    <img src="Banner Patterns/Enderman/Step 5.png" width="200px" height="100px">
+                </div>
+                <div style="text-align: center;">
+                    <h2>Pokeball Banner</h2>
+                    <h3>Step 1</h3>
+                    <img src="Banner Patterns/Pokeball/Step 1.png" width="200px" height="100px">
+                    <h3>Step 2</h3>
+                    <img src="Banner Patterns/Pokeball/Step 2.png" width="200px" height="100px">
+                    <h3>Step 3</h3>
+                    <img src="Banner Patterns/Pokeball/Step 3.png" width="200px" height="100px">
+                    <h3>Step 4</h3>
+                    <img src="Banner Patterns/Pokeball/Step 4.png" width="200px" height="100px">
+                    <h3>Step 5</h3>
+                    <img src="Banner Patterns/Pokeball/Step 5.png" width="200px" height="100px">
+                    <h3>Step 6</h3>
+                    <img src="Banner Patterns/Pokeball/Step 6.png" width="200px" height="100px">
+                </div>
+                <div style="text-align: center;">
+                    <h2>Chocalate Bar Banner</h2>
+                    <h3>Step 1</h3>
+                    <img src="Banner Patterns/Chocalate Bar/Step 1.png" width="200px" height="100px">
+                    <h3>Step 2</h3>
+                    <img src="Banner Patterns/Chocalate Bar/Step 2.png" width="200px" height="100px">
+                    <h3>Step 3</h3>
+                    <img src="Banner Patterns/Chocalate Bar/Step 3.png" width="200px" height="100px">
+                    <h3>Step 4</h3>
+                    <img src="Banner Patterns/Chocalate Bar/Step 4.png" width="200px" height="100px">
+                    <h3>Step 5</h3>
+                    <img src="Banner Patterns/Chocalate Bar/Step 5.png" width="200px" height="100px">
+                    <h3>Step 6</h3>
+                    <img src="Banner Patterns/Chocalate Bar/Step 6.png" width="200px" height="100px">
+                </div>
+                <div style="text-align: right;">
+                    <h1>Riceball Banner</h1>
+                    <h2>Step 1</h2>
+                    <img src="Banner Patterns/Rice Ball/Step 1.png" width="200px" height="100px">
+                    <h2>Step 2</h2>
+                    <img src="Banner Patterns/Rice Ball/Step 2.png" width="200px" height="100px">
+                    <h2>Step 3</h2>
+                    <img src="Banner Patterns/Rice Ball/Step 3.png" width="200px" height="100px">
+                    <h2>Step 4</h2>
+                    <img src="Banner Patterns/Rice Ball/Step 4.png" width="200px" height="100px">
+                    <h2>Step 5</h2>
+                    <img src="Banner Patterns/Rice Ball/Step 5.png" width="200px" height="100px">
+                    <h2>Step 6</h2>
+                    <img src="Banner Patterns/Rice Ball/Step 6.png" width="200px" height="100px">
+                </div>
+            </div>
+            <button onclick="HomepageBannerPatterns()" style="text-align: center;">Back</button>
+        </div>
+            <script>
+                document.getElementById("Artpage").style.display = "none"
+                document.getElementById("Banner Patterns").style.display = "none"
+                function randomwebsiteget () {
+                    var websites = ["https://anrar4.github.io/DyeLeatherArmor/", "https://play.pokemonshowdown.com/", "https://neal.fun/", "https://theuselessweb.com/", "https://kickassapp.com/"];
+                    var randomwebsite = websites[Math.floor(Math.random()*websites.length)];
+                    window.open(randomwebsite, "_blank")
+                }
+                function HomepageArtpage() {
+                    var x = document.getElementById("Homepage");
+                    var y = document.getElementById("Artpage");
+                        if (x.style.display === "none") {
+                            x.style.display = "block";
+                            y.style.display = "none";
+                        } else {
+                            x.style.display = "none";
+                            y.style.display = "block";
+                        }
+                    }
+                function HomepageBannerPatterns() {
+                    var x = document.getElementById("Homepage")
+                    var y = document.getElementById("Banner Patterns")
+                        if (x.style.display === "none") {
+                            x.style.display = "block";
+                            y.style.display = "none";
+                        } else {
+                            x.style.display = "none";
+                            y.style.display = "block";
+                        }
+                }
+                </script>
+    </body>
+</html>
